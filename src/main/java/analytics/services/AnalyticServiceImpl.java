@@ -40,6 +40,9 @@ public class AnalyticServiceImpl implements AnalyticService {
 
     @Override
     public List<BrowserUsage> getBrowserUsageBetweenDays(Long startDate, Long endDate) {
+        if (startDate.equals(endDate)){
+            startDate -= 86400;
+        }
         List<BrowserUsage> startDateUsages = browserRepository.findBrowserUsageByDay(startDate);
         List<BrowserUsage> endDateUsage = browserRepository.findBrowserUsageByDay(endDate);
 
@@ -56,6 +59,9 @@ public class AnalyticServiceImpl implements AnalyticService {
 
     @Override
     public List<DeviceUsage> getDeviceUsageBetweenDays(Long startDate, Long endDate) {
+        if (startDate.equals(endDate)){
+            startDate -= 86400;
+        }
         List<DeviceUsage> startDateUsages = deviceRepository.findDeviceUsageByDay(startDate);
         List<DeviceUsage> endDateUsage = deviceRepository.findDeviceUsageByDay(endDate);
 
@@ -72,6 +78,9 @@ public class AnalyticServiceImpl implements AnalyticService {
 
     @Override
     public List<OsUsage> getOsUsageBetweenDays(Long startDate, Long endDate) {
+        if (startDate.equals(endDate)){
+            startDate -= 86400;
+        }
         List<OsUsage> startDateUsages = osRepository.findOsUsageByDay(startDate);
         List<OsUsage> endDateUsage = osRepository.findOsUsageByDay(endDate);
 

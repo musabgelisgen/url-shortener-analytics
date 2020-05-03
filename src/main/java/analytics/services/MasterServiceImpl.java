@@ -45,6 +45,7 @@ public class MasterServiceImpl implements MasterService {
             androidCount += map.get("android");
             iosCount += map.get("ios");
             otherOsCount += map.get("otherOs");
+            osxCount += map.get("osx");
         }
 
         computerCount = windowsCount + osxCount + linuxCount + otherOsCount;

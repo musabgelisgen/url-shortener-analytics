@@ -13,7 +13,6 @@ public class HealthCheckController {
 
     @GetMapping("/healthCheck")
     public ResponseEntity<?> healthCheck(@RequestHeader Map<String, String> map){
-
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 }
